@@ -1,0 +1,13 @@
+.login{
+            width: 200px;   
+            height: 200px;   
+            position: fixed;   
+            top: 0px;   
+            left: 0px;   
+            right: 0px;   
+            bottom: 0px;   
+            margin: auto;  
+}
+.number{
+  border-bottom: 2rpx solid #CCCCCC;
+}

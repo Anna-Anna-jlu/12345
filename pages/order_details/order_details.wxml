@@ -1,0 +1,70 @@
+<view class="weui-cells__title">当前订单详情</view>
+<view class="main">
+    <view class="page">
+   
+        <view class="page_bd">
+    <view  class="weui-cell weui-cell_access" hover-class="weui-cell_active"   bindtap="showitem1">
+      <view class="weui-cell__bd">发起的订单</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+        <view class="{{open1?'display_show':'display_none'}}">
+       <block wx:for='{{articles}}' wx:key='{{item.id}}' wx:for-index="index">
+       <view class='info'>
+        <view>{{index+1}}</view>
+        <view name="order_number">快递编号：{{item.pnumber}}</view>
+        <view>快递预期时间：{{item.to_time}}</view>
+        <view>快递位置：{{item.from_position}}</view>
+        <view>快递送达位置：{{item.to_position}}</view>
+        <view>快递状态：{{item.state}}</view>
+        <view wx:if="{{item.state=='接受'}}">送件人姓名：{{item.from_name}}</view>
+        <view wx:if="{{item.state=='接受'}}">送件人电话：{{item.from_tele}}</view>
+        <view>费用：{{item.money}}</view>
+        <view wx:if="{{item.state=='接受'}}"><button bindtap="Confirm_goods" class="button">确认收货</button></view>
+      </view>
+    </block>
+        </view>
+    </view>
+
+
+    <view class="page_bd">
+    <view  class="weui-cell weui-cell_access" hover-class="weui-cell_active"   bindtap="showitem3">
+      <view class="weui-cell__bd">未处理的订单</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+        <view class="{{open3?'display_show':'display_none'}}">
+       <block wx:for='{{articles2}}' wx:key='{{item.id}}' wx:for-index="index">
+       <view class='info'>
+        <view>{{index+1}}</view>
+        <view>快递编号：{{item.pnumber}}</view>
+        <button bindtap="pickUp" class="button">取货</button>
+        <button bindtap="entrust" class="button">委托</button>
+      </view>
+    </block>
+        </view>
+    </view>
+
+
+
+    <view class="page_bd">
+    <view  class="weui-cell weui-cell_access" hover-class="weui-cell_active"   bindtap="showitem2">
+      <view class="weui-cell__bd">接受的订单</view>
+      <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </view>
+        <view class="{{open2?'display_show':'display_none'}}">
+       <block wx:for='{{articles1}}' wx:key='{{item.id}}' wx:for-index="index">
+       <view class='info'>
+        <view>{{index+1}}</view>
+        <view>快递编号：{{item.pnumber}}</view>
+        <view>快递预期送达时间：{{item.to_time}}</view>
+        <view>快递位置：{{item.from_position}}</view>
+        <view>快递送达位置：{{item.to_position}}</view>
+        <view>收件人姓名：{{item.from_name}}</view>
+        <view>收件人电话：{{item.from_tele}}</view>
+        <view>费用：{{item.money}}</view>
+         <button bindtap="Confirm_delivery" class="button">确认送达</button>
+      </view>
+    </block>
+        </view>
+    </view>
+     </view>
+     </view>

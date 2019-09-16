@@ -1,0 +1,6 @@
+<view class="login">
+<view class="number">
+学号：<input type='text' placeholder="请输入学号" bindinput="input"></input>
+</view>
+<button class="inter-login" bindtap="jumpPage">登录</button>
+</view>

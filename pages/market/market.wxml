@@ -1,0 +1,25 @@
+<view class="weui-cells__title">交易市场</view>
+<scroll-view class='scroll-view-container' scroll-y='{{true}}' bindscrolltolower='scrollToLower' bindscrolltoupper='scrollToUpper' lower-threshold='30' upper-threshold='0'>
+  <block wx:for='{{articles}}' wx:key='{{item.id}}' wx:for-index="index">
+    <view class='articles-container'>
+      <view class='info'>
+        <!-- <image class='avatar' src='{{item.avatar}}'></image>{{item.nickname}}
+        <text class='created-at'>{{item.created_at}}</text>
+        <text class='category'>{{item.category}}</text> -->
+        <view class="word" name="order_number">快递编号：{{item.pnumber}}</view>
+        <view class="word">快递期望送达时间：{{item.time}}</view>
+        <view class="word">快递位置：{{item.from_location}}</view>
+        <view class="word">快递送达位置：{{item.to_location}}</view>
+        <view class="word">收件人姓名：{{item.name}}</view>
+        <view class="word">收件人电话：{{item.tele}}</view>
+        <view class="word">费用：{{item.money}}</view>
+         <view class="button"><button class="inter-button" bindtap="accept" id="{{index}}"><view class="word">接受</view></button></view>
+        
+      </view>
+    </view>
+  </block>
+  <view class='data-loading' hidden='{{hidden}}'>
+    数据加载中...
+  </view>
+</scroll-view>
+   
